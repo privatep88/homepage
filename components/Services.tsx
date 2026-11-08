@@ -9,7 +9,6 @@ import {
   Laptop,
   ChevronLeft,
 } from 'lucide-react';
-import { assetUrl } from '../utils/assetUrl';
 
 interface ServiceCardProps {
   title: string;
@@ -103,42 +102,42 @@ const Services: React.FC = () => {
       title: "نظام تسجيل الزوار والموردين",
       description: "نظام آمن وفعال لتسجيل بيانات الزوار والموردين وتنظيم دخولهم وخروجهم.",
       Icon: Users,
-      image: assetUrl("assets/cards/card-visitors.png"),
+      image: `${import.meta.env.BASE_URL}assets/cards/card-visitors.png`,
       link: "https://vistor-vindor.vercel.app/",
     },
     {
       title: "نظام حجز القاعات",
       description: "نظام سهل ومرن لحجز قاعات الاجتماعات إلكترونياً.",
       Icon: Calendar,
-      image: assetUrl("assets/cards/card-halls.png"),
+      image: `${import.meta.env.BASE_URL}assets/cards/card-halls.png`,
       link: "https://hall-nu.vercel.app/",
     },
     {
       title: "نظام تسجيل أسماء المستلمين لبطاقات الزوار",
       description: "نظام إلكتروني يهدف إلى تنظيم وتوثيق عملية تسليم واستلام بطاقات الزوار لضمان المتابعة الدقيقة.",
       Icon: IdCard,
-      image: assetUrl("assets/cards/card-badges.png"),
+      image: `${import.meta.env.BASE_URL}assets/cards/card-badges.png`,
       link: "https://card-recipients.vercel.app/",
     },
     {
       title: "نظام تسجيل المبالغ المصروفة من قبل الدعم اللوجيستي ( بيتي كاش )",
       description: "نظام رقمي دقيق لإدارة وتسجيل المصروفات النثرية اليومية للدعم اللوجيستي وتوثيقها.",
       Icon: Coins,
-      image: assetUrl("assets/cards/card-pettycash.png"),
+      image: `${import.meta.env.BASE_URL}assets/cards/card-pettycash.png`,
       link: "https://petty-cash-eta.vercel.app/",
     },
     {
       title: "نظام تسجيل بيانات الرخص التجارية والعقود وأخرى",
       description: "نظام متكامل لتسجيل وأرشفة الرخص التجارية والعقود المختلفة بطريقة آمنة ومنظمة.",
       Icon: FileText,
-      image: assetUrl("assets/cards/card-licenses.png"),
+      image: `${import.meta.env.BASE_URL}assets/cards/card-licenses.png`,
       link: "https://license-jet.vercel.app/",
     },
     {
       title: "نظام تسجيل نسبة استهلاك الماء والكهرباء للمقرات",
       description: "نظام متخصص لمراقبة وتسجيل معدلات استهلاك الماء والكهرباء في المقرات لضمان الكفاءة وترشيد الاستهلاك.",
       Icon: Zap,
-      image: assetUrl("assets/cards/card-utilities.png"),
+      image: `${import.meta.env.BASE_URL}assets/cards/card-utilities.png`,
       link: "https://record-water-elc.vercel.app/",
     },
   ];

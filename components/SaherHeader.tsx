@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Calendar, Clock, Home, Headset, CheckCircle2 } from 'lucide-react';
-import { assetUrl } from '../utils/assetUrl';
 
 interface SaherHeaderProps {
   onLogout?: () => void;
@@ -73,7 +72,7 @@ const SaherHeader: React.FC<SaherHeaderProps> = ({ onLogout }) => {
       <div className="bg-gradient-to-r from-[#07162B] via-[#0C254A] to-[#07162B] text-white min-h-[56px] py-2 px-4 md:px-8 relative z-40 border-b border-[#1B355E] overflow-hidden flex items-center">
         {/* Right-side Abu Dhabi Skyline Silhouette (matches reference image top-right) */}
         <img
-          src={assetUrl('assets/header-skyline.png')}
+          src={`${import.meta.env.BASE_URL}assets/header-skyline.png`}
           alt=""
           aria-hidden="true"
           referrerPolicy="no-referrer"
@@ -104,7 +103,7 @@ const SaherHeader: React.FC<SaherHeaderProps> = ({ onLogout }) => {
             {/* SAHER Golden/White Swoosh Emblem (on the right of text in RTL) */}
             {!emblemError ? (
               <img
-                src={assetUrl('assets/header-emblem.png')}
+                src={`${import.meta.env.BASE_URL}assets/header-emblem.png`}
                 alt="شعار ساهر"
                 referrerPolicy="no-referrer"
                 className="h-9 md:h-11 w-auto object-contain shrink-0 drop-shadow-sm"
