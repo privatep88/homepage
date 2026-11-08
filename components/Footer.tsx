@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Home, LayoutGrid } from 'lucide-react';
+import { assetUrl } from '../utils/assetUrl';
 
 const Footer: React.FC = () => {
   return (
@@ -14,7 +15,7 @@ const Footer: React.FC = () => {
           {/* 1. Right Side (in RTL, first in DOM): SAHER Logo & Golden Wave Ribbon */}
           <div className="shrink-0 flex items-center justify-center lg:justify-end order-1 lg:order-1 w-full lg:w-auto">
             <img
-              src="/assets/footer-right-art.png"
+              src={assetUrl('assets/footer-right-art.png')}
               alt="SAHER Smart Services"
               referrerPolicy="no-referrer"
               className="h-[115px] sm:h-[130px] lg:h-[145px] w-auto object-contain select-none pointer-events-none drop-shadow-sm"
@@ -114,7 +115,7 @@ const Footer: React.FC = () => {
           {/* 3. Left Side (in RTL, last in DOM): Abu Dhabi Skyline */}
           <div className="shrink-0 flex items-end justify-center lg:justify-start order-3 lg:order-3 w-full lg:w-auto">
             <img
-              src="/assets/footer-skyline.png"
+              src={assetUrl('assets/footer-skyline.png')}
               alt="أفق أبوظبي العمراني"
               referrerPolicy="no-referrer"
               className="h-[110px] sm:h-[125px] lg:h-[140px] w-auto object-contain object-bottom select-none pointer-events-none drop-shadow-sm"

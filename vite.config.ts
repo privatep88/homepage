@@ -7,9 +7,12 @@ export default defineConfig(({ command, mode }) => {
     const env = loadEnv(mode, '.', '');
     
     // Determine base URL:
-    // - Default to root '/' for AI Studio and standard deployments
-    // - Use process.env.BASE_URL if set (e.g. GitHub Actions sets BASE_URL: /homepage/)
-    const base = process.env.BASE_URL || '/';
+    // - Use process.env.BASE_URL if set (e.g. GitHub Actions workflow sets BASE_URL: /homepage/)
+    // - In production build mode without explicit env var, default to '/homepage/' for GitHub Pages
+    // - In dev / preview mode, default to '/' for local server (http://localhost:3000)
+    const base = process.env.BASE_URL !== undefined
+      ? process.env.BASE_URL
+      : (command === 'build' ? '/homepage/' : '/');
 
     return {
       base,

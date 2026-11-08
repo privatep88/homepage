@@ -1,5 +1,6 @@
 import React from 'react';
 import { Users, Calendar, FileText, BarChart3 } from 'lucide-react';
+import { assetUrl } from '../utils/assetUrl';
 
 const Hero: React.FC = () => {
   // Original news data preserved 100%
@@ -32,7 +33,7 @@ const Hero: React.FC = () => {
         {/* Proportional Banner Container */}
         <div className="relative w-full aspect-[1309/240] min-h-[220px] sm:min-h-[240px] md:min-h-[250px] lg:min-h-[270px]">
           <img
-            src="/assets/hero-bg-clean.png"
+            src={assetUrl('assets/hero-bg-clean.png')}
             alt="مقر خدمات ساهر الذكية ولوحة التحكم الرقمية"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover object-center block select-none"
