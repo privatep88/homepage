@@ -6,8 +6,9 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig(({ command, mode }) => {
     const env = loadEnv(mode, '.', '');
     const isProduction = mode === 'production' || command === 'build';
+    const base = !isProduction ? '/' : (process.env.BASE_URL || '/homepage/');
     return {
-      base: isProduction ? (process.env.BASE_URL || './') : '/',
+      base,
       server: {
         port: 3000,
         host: '0.0.0.0',
