@@ -1,0 +1,8 @@
+{
+  "name": "Saher Smart Services",
+  "description": "A corporate landing page for Saher Smart Services featuring facility management tools, utilizing a professional Arabic RTL layout.",
+  "requestFramePermissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
