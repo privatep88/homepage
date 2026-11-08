@@ -36,19 +36,44 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      - name: Lint and type-check
+        run: npm run lint
+
       - name: Build application
         run: npm run build
         env:
           BASE_URL: /homepage/
 
-      - name: Verify output
+      - name: Verify build output and assets
         run: |
           test -f dist/index.html
           test -d dist/assets
+          # 1. Guarantee no raw TSX script tag in production HTML
           if grep -Eq 'src=["\x27][^"\x27]*\.tsx' dist/index.html; then
             echo "ERROR: Raw TSX found in production HTML"
             exit 1
           fi
+          # 2. Guarantee correct base URL path in production HTML
+          if ! grep -q '/homepage/assets/' dist/index.html; then
+            echo "ERROR: Assets not referencing /homepage/ base URL in production HTML"
+            exit 1
+          fi
+          # 3. Guarantee all 6 service card images exist
+          for card in card-visitors.png card-halls.png card-badges.png card-pettycash.png card-licenses.png card-utilities.png; do
+            if [ ! -f "dist/assets/cards/$card" ]; then
+              echo "ERROR: Missing card asset: dist/assets/cards/$card"
+              exit 1
+            fi
+          done
+          # 4. Guarantee core layout images exist
+          for asset in hero-bg-clean.png footer-skyline.png footer-right-art.png header-skyline.png header-emblem.png; do
+            if [ ! -f "dist/assets/$asset" ]; then
+              echo "ERROR: Missing layout asset: dist/assets/$asset"
+              exit 1
+            fi
+          done
+          # 5. Create 404.html fallback for GitHub Pages SPA compatibility
+          cp dist/index.html dist/404.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

@@ -19,12 +19,17 @@ export default defineConfig(({ command, mode }) => {
       server: {
         port: 3000,
         host: '0.0.0.0',
-        allowedHosts: true,
+        allowedHosts: [
+          'localhost',
+          '127.0.0.1',
+          '.run.app',
+          '.aistudio.google.com',
+        ],
       },
       plugins: [react(), tailwindcss()],
       define: {
-        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
+        // Prevent leaking backend environment variables or API keys into client bundles
+        'process.env.NODE_ENV': JSON.stringify(mode),
       },
       resolve: {
         alias: {
