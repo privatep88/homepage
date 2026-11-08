@@ -1,7 +1,14 @@
 @import "tailwindcss";
 
 /* Global styles */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Cairo', sans-serif;
+  background-color: #EDF5FF;
+  color: #10233D;
+  overflow-x: hidden;
 }
