@@ -8,16 +8,9 @@ export default defineConfig(({ command, mode }) => {
     
     // Determine base URL:
     // - During development and Google AI Studio preview: '/'
-    // - During CI/CD build for GitHub Pages repo 'homepage': '/homepage/'
-    // - If explicit BASE_URL is set, respect its exact value
-    let base = '/';
-    if (process.env.BASE_URL) {
-      base = process.env.BASE_URL;
-    } else if (process.env.GITHUB_ACTIONS === 'true') {
-      base = '/homepage/';
-    } else {
-      base = '/';
-    }
+    // - During build for GitHub Pages repo 'homepage': '/homepage/' (or process.env.BASE_URL if provided)
+    const isProduction = mode === 'production' || command === 'build';
+    const base = isProduction ? (process.env.BASE_URL || '/homepage/') : '/';
 
     return {
       base,
