@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Calendar, Clock, LogOut } from 'lucide-react';
+import { Menu, X, Calendar, Clock } from 'lucide-react';
 
 interface SaherHeaderProps {
-  onLogout: () => void;
+  onLogout?: () => void;
 }
 
 const SaherHeader: React.FC<SaherHeaderProps> = ({ onLogout }) => {
@@ -104,17 +104,6 @@ const SaherHeader: React.FC<SaherHeaderProps> = ({ onLogout }) => {
           <div className="flex items-center gap-4">
             <nav className="hidden md:flex items-center gap-4">
               <a href="#" className="text-lg font-bold text-[#0056b3] hover:text-[#fbbf24] transition-colors">اتصل بنا</a>
-              
-              <div className="w-px h-6 bg-slate-200 mx-2"></div>
-
-              {/* Logout Button (Desktop) */}
-              <button 
-                onClick={onLogout}
-                className="group flex items-center gap-2 px-4 py-1.5 rounded-full border border-red-100 bg-red-50 text-red-600 font-bold text-sm hover:bg-red-600 hover:text-white hover:border-red-600 transition-all duration-300 shadow-sm"
-              >
-                <span>خروج</span>
-                <LogOut size={16} className="group-hover:-translate-x-1 transition-transform" />
-              </button>
             </nav>
 
             {/* Mobile Menu Icon */}
@@ -144,20 +133,6 @@ const SaherHeader: React.FC<SaherHeaderProps> = ({ onLogout }) => {
             <a href="#" className="text-[#0056b3] hover:text-[#fbbf24] font-bold block text-center py-2" onClick={() => setIsMenuOpen(false)}>
               اتصل بنا
             </a>
-            
-            {/* Logout Button (Mobile) */}
-            <div className="pt-2 border-t border-slate-100">
-                <button 
-                  onClick={() => {
-                    setIsMenuOpen(false);
-                    onLogout();
-                  }}
-                  className="w-full flex items-center justify-center gap-2 bg-red-50 text-red-600 py-3 rounded-xl font-bold hover:bg-red-100 transition-colors"
-                >
-                  <span>تسجيل الخروج</span>
-                  <LogOut size={18} />
-                </button>
-            </div>
           </div>
         </div>
 

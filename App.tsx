@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 const App: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col text-slate-800 bg-slate-50 font-[Cairo]">
-      <SaherHeader onLogout={() => {}} />
+      <SaherHeader />
       <main className="flex-grow">
         <Hero />
         <Services />
