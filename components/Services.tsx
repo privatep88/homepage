@@ -103,14 +103,14 @@ const Services: React.FC = () => {
       description: "نظام آمن وفعال لتسجيل بيانات الزوار والموردين وتنظيم دخولهم وخروجهم.",
       Icon: Users,
       image: `${import.meta.env.BASE_URL}assets/cards/card-visitors.png`,
-      link: "https://vistor-vindor.vercel.app/",
+      link: "https://privatep88.github.io/visitor/",
     },
     {
       title: "نظام حجز القاعات",
       description: "نظام سهل ومرن لحجز قاعات الاجتماعات إلكترونياً.",
       Icon: Calendar,
       image: `${import.meta.env.BASE_URL}assets/cards/card-halls.png`,
-      link: "https://hall-nu.vercel.app/",
+      link: "https://booking-hall.ai.studio/",
     },
     {
       title: "نظام تسجيل أسماء المستلمين لبطاقات الزوار",
@@ -131,7 +131,7 @@ const Services: React.FC = () => {
       description: "نظام متكامل لتسجيل وأرشفة الرخص التجارية والعقود المختلفة بطريقة آمنة ومنظمة.",
       Icon: FileText,
       image: `${import.meta.env.BASE_URL}assets/cards/card-licenses.png`,
-      link: "https://license-jet.vercel.app/",
+      link: "https://privatep88.github.io/new_license-/",
     },
     {
       title: "نظام تسجيل نسبة استهلاك الماء والكهرباء للمقرات",
