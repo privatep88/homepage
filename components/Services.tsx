@@ -110,7 +110,7 @@ const Services: React.FC = () => {
       description: "نظام سهل ومرن لحجز قاعات الاجتماعات إلكترونياً.",
       Icon: Calendar,
       image: `${import.meta.env.BASE_URL}assets/cards/card-halls.png`,
-      link: "https://booking-hall.ai.studio/",
+      link: "https://privatep88.github.io/booking_hall/",
     },
     {
       title: "نظام تسجيل أسماء المستلمين لبطاقات الزوار",
